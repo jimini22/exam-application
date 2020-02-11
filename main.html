@@ -3,6 +3,21 @@
 	<head>
 		<title>Application Form</title>
 		<meta charset="utf-8">
+
+		<script type="text/javascript">
+			function confirm(){
+				var a = document.getElementById("name").value;
+				temp1=a;
+				var b = document.getElementById("age").value;
+				temp2=b;
+				if (temp1==null) {
+					alert("이름 입력해");
+				}else if (temp2==null) {
+					alert("나이 입력해")
+				}
+				return;
+			}
+		</script>
 	</head>
 
 	<body>
@@ -17,7 +32,7 @@
 					<span style="font-size:1.5em">이 름</span>
 				</td>
 				<td align="center">
-					<input type="text" name="name">
+					<input type="text" id="name">
 				</td>
 			</tr>
 			<tr>
@@ -25,7 +40,7 @@
 					<span style="font-size:1.5em">나 이</span>
 				</td>
 				<td align="center">
-					<input type="text" name="age">
+					<input type="number" id="age">
 				</td>
 			</tr>
 			<tr>
@@ -33,13 +48,13 @@
 					<span style="font-size:1.5em">연락처</span>
 				</td>
 				<td align="center">
-					<select name="tell1">
+					<select>
 						<option value="010">010</option>
 						<option value="011">011</option>
 						<option value="017">017</option>
 					</select> -
-					<input type="text" maxlength="4" size="4" name="tell2"> -
-					<input type="text" maxlength="4" size="4" name="tell3">
+					<input type="text" maxlength="4" size="4" id="tell1"> -
+					<input type="text" maxlength="4" size="4" id="tell2">
 				</td>
 			</tr>
 			<tr>
@@ -47,20 +62,22 @@
 					<span style="font-size:1.5em">성 별</span>
 				</td>
 				<td align="center">
-					<input type="radio" name="gener">
+					<input type="radio" id="gener">
 						<span class="up">남자</span>&nbsp;&nbsp;
-					<input type="radio" name="gener">
+					<input type="radio" id="gener">
 						<span class="up">여자</span>
 				</td>
 			</tr>
 		</table>
 		<br>
 		<center>
-			<button type="button" onclick="myFunction()">확 인</button>
+			<button id="confirm" type="button" onclick="confirm()">확 인</button>
 		</center>
+
 		<br><br><br><br>
+
 		<center>
-			<span style="font-size:1.5em">결 과</span>
+			<span style="font-size:1.5em">- 결 과 -</span>
 		</center>
 		<br>
 		<table align="center" width="400px" border="1" cellspacing="0" cellpadding="0">
@@ -69,24 +86,18 @@
 					<span style="font-size:1.5em">메시지</span>
 				</td>
 				<td>
+				
 					<span style="font-size:1.3em">
-					정상입니다.<br>
-					이 름 : <br>
-					나 이 : <br>
-					연락처 : <br>
-					성 별 : 
+					정상입니다.
+					<br>이 름 : 
+					<br>나 이 : 
+					<br>연락처 : 
+					<br>성 별 : 
 					</span>
+		
 				</td>
 			</tr>
 		</table>
-		<script type="text/javascript">
-			function myFunction(){
-				if(){
-
-				}else{
-
-				}
-			}
-		</script>
+		
 	</body>
 </html>
