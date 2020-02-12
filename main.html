@@ -3,29 +3,29 @@
 	<head>
 		<title>Application Form</title>
 		<meta charset="utf-8">
-
 		<script type="text/javascript">
-			function confirm(){
-				var a = document.getElementById("name").value;
-				temp1=a;
-				var b = document.getElementById("age").value;
-				temp2=b;
-				if (temp1==null) {
-					alert("이름 입력해");
-				}else if (temp2==null) {
-					alert("나이 입력해")
-				}
-				return;
+			function appCheck(){
+				theForm=document.appForm;
+				if (theForm.name.value==""){
+					alert("이름 입력해주세요")
+				}else if (theForm.age.value=="") {
+					alert("나이 입력해주세요")
+				}else if (theForm.tell1.value==""||theForm.tell2.value=="") {
+					alert("연락처 입력해주세요")
+				}else if (theForm.gender.value=null) {
+					alert("성별 선택해주세요")
+				}return; //https://sururu.tistory.com/7
 			}
 		</script>
 	</head>
 
-	<body>
+	<body bgcolor="#e6e6e6">
+		<form name="appForm">
 		<table align="center" width="400px" border="1" cellspacing="0" cellpadding="0">
 			<tr>
 				<th colspan="2" align="center" height="80">
 					<span style="font-size:2em">신 청 서</span>
-				</td>
+				</th>
 			</tr>
 			<tr>
 				<td align="center" height="70">
@@ -62,19 +62,21 @@
 					<span style="font-size:1.5em">성 별</span>
 				</td>
 				<td align="center">
-					<input type="radio" id="gener">
+					<input type="radio" id="gender" value="Male">
 						<span class="up">남자</span>&nbsp;&nbsp;
-					<input type="radio" id="gener">
+					<input type="radio" id="gender" value="Female">
 						<span class="up">여자</span>
 				</td>
 			</tr>
 		</table>
 		<br>
+		
 		<center>
-			<button id="confirm" type="button" onclick="confirm()">확 인</button>
+			<button id="confirm" type="button" onclick="appCheck()">확 인</button>
 		</center>
+		</form>
 
-		<br><br><br><br>
+		<br><br><br>
 
 		<center>
 			<span style="font-size:1.5em">- 결 과 -</span>
