@@ -5,6 +5,10 @@
 		<title>Application Form</title>
 		<meta charset="utf-8">
 		<script type="text/javascript">
+
+			
+			console.log(1111);
+
 			function appCheck(){
 				theForm=document.appForm;
 				
@@ -19,17 +23,27 @@
 				}return;
 			}
 
+			
+
 			$(document).ready(function(){
 				$("#name").keyup(function(){
 					$("#out_name").text($("#name").val());
 				});
-			});
-			$(document).ready(function(){
+				
 				$("#age").keyup(function(){
 					$("#out_age").text($("#age").val());
 				});
-			});
-			$(document).ready(function(){
+				
+				$("#tell1").change (function(){
+					var t = document.getElementById("tell1").value;
+					document.getElementById("out_tell1").innerHTML = t;
+					// $( "#tell1" ).val
+
+					console.log($( "#tell1" ).val());
+					console.log(t);
+				});
+
+
 				$("#tell1").keyup(function(){
 					$("#out_tell1").text($("#tell1").val());
 				});
@@ -39,11 +53,8 @@
 				$("#tell3").keyup(function(){
 					$("#out_tell3").text($("#tell3").val());
 				});
-			});
-			$(document).ready(function(){
-				$("#gender").keyup(function(){
-					$("#out_gender").text($("#gender").val());
-				});
+
+				
 			});
 		</script>
 	</head>
@@ -70,7 +81,7 @@
 					<span style="font-size:1.5em">나 이</span>
 				</td>
 				<td align="center">
-					<input type="number" id="age">
+					<input type="number" id="age" >
 				</td>
 			</tr>
 			<tr>
@@ -78,12 +89,13 @@
 					<span style="font-size:1.5em">연락처</span>
 				</td>
 				<td align="center">
-					<select id="tell1">
+					<select id="tell1" >
+						<option value="">선택</option>
 						<option value="010">010</option>
 						<option value="011">011</option>
 						<option value="017">017</option>
 					</select> -
-					<input type="text" maxlength="4" size="4" id="tell2"> -
+					<input type="text" maxlength="4" size="4" id="tell2" > -
 					<input type="text" maxlength="4" size="4" id="tell3">
 				</td>
 			</tr>
@@ -119,13 +131,27 @@
 				</td>
 				<td>
 				<form name="resultMessage">
+					
 					<span style="font-size:1.3em">
 					정상입니다.<br>
 					<br>이 름 : <span id="out_name"></span>
 					<br>나 이 : <span id="out_age"></span>
-					<br>연락처 : <span id="out_tell1"></span>-<span id="out_tell2"></span>-<span id="out_tell3"></span>
-					<br>성 별 : <span id="out_gender"></span>
+					<br>연락처 : 
+						<span id="out_tell1">
+							document.write(out_tell1);
+						</span>-
+						<span id="out_tell2">
+							document.write(out_tell2);
+						</span>-
+						<span id="out_tell3">
+							document.write(out_tell3);
+						</span>
+					<br>성 별 : 
+						<span>
+							document.write(g);
+						</span>
 					</span>
+					
 				</form>
 				</td>
 			</tr>
