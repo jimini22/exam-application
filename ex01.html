@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2">
+                <span>신 청 서</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <span>이 름</span>
+            </td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>나 이</span>
+            </td>
+            <td>
+                <input type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>연 락 처</span>
+            </td>
+            <td>
+                <select>
+                    <option value="">선택</option>
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="017">017</option>
+                </select>
+                <input type="number">
+                <input type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>성 별</span>
+            </td>
+            <td>
+                <input type="radio" value="Male">남자
+                <input type="radio" value="Female">여자
+            </td>
+        </tr>
+    </table>
+    <br>
+    <center>
+        <input type="button" value="확 인" onclick="">
+    </center>
+    
+    <br><br><br>
+
+    <center>- 결 과 -</center>
+    <br>
+    <table>
+        <tr>
+            <td>
+                메시지
+            </td>
+            <td>
+                <textarea>
+                정상입니다.
+                이 름 : 
+                나 이 : 
+                연락처 : 
+                성 별 : 
+                </textarea>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

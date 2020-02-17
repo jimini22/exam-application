@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+    <script>
+        function appCheck(){
+			var theForm = document.appForm;
+			if (theForm.appName.value==""){
+				alert("이름을 입력해주세요")
+			}else if (theForm.appAge.value=="") {
+				alert("나이를 입력해주세요")
+			}else if (theForm.appTell1.value==""||theForm.appTell2.value==""||theForm.appTell3.value=="") {
+				alert("연락처를 입력해주세요")
+			}else if (theForm.appGender.value==false) {
+				alert("성별을 선택해주세요")
+			}return;
+        }
+        
+    </script>
+</head>
+<body>
+    <form name="appForm">
+    <table align="center" border="2" cellspacing="0">
+        <tr>
+            <th colspan="2">
+                <p style="font-size: x-large;">신 청 서</p>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: large; text-align: center;">이 름</p>
+            </td>
+            <td>
+                <input type="text" id="appName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: large; text-align: center;">나 이</p>
+            </td>
+            <td>
+                <input type="number" id="appAge">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: large; text-align: center;">연 락 처</p>
+            </td>
+            <td>
+                <select id="appTell1">
+                    <option value="">선택</option>
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="017">017</option>
+                </select>-
+                <input type="text" id="appTell2" maxlength="4" size="4">-
+                <input type="text" id="appTell3" maxlength="4" size="4">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: large; text-align: center;">성 별</p>
+            </td>
+            <td>
+                <input type="radio" id="appGender" value="Male">남자
+                <input type="radio" id="appGender" value="Female">여자
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div id="confirmButton" align="center">
+        <input type="button" value="확 인" onclick="appCheck()">
+        <input type="reset" value="초기화">
+    </div>
+    </form>
+    <br><br><br>
+
+    <div align="center">- 결 과 -</div>
+    <br>
+    <table align="center" border="1" cellspacing="0">
+        <tr>
+            <td>
+                메시지
+            </td>
+            <td>
+                <textarea style="width: 87%; height: 100px;">
+                정상입니다.
+                이 름 : 
+                나 이 : 
+                연락처 : 
+                성 별 : 
+                </textarea>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

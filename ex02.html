@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Application Form</title>
+</head>
+<body>
+    <form id="appForm">
+    <table align="center" border="1" cellspacing="0">
+        <tr>
+            <th colspan="2">
+                <span>신 청 서</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <span>이 름</span>
+            </td>
+            <td>
+                <input type="text" id="appName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>나 이</span>
+            </td>
+            <td>
+                <input type="number" id="appAge">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>연 락 처</span>
+            </td>
+            <td>
+                <select id="appTell1">
+                    <option value="">선택</option>
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="017">017</option>
+                </select>-
+                <input type="text" id="appTell2" maxlength="4" size="4">-
+                <input type="text" id="appTell3" maxlength="4" size="4">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>성 별</span>
+            </td>
+            <td>
+                <input type="radio" name="gender" value="Male">남자
+                <input type="radio" name="gender" value="Female">여자
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div id="confirmButton" align="center">
+        <input type="button" value="확 인" onclick="">
+        <input type="reset" value="초기화">
+    </div>
+    </form>
+    <br><br><br>
+
+    <div align="center">- 결 과 -</div>
+    <br>
+    <table align="center" border="1" cellspacing="0">
+        <tr>
+            <td>
+                메시지
+            </td>
+            <td>
+                <textarea>
+                정상입니다.
+                이 름 : 
+                나 이 : 
+                연락처 : 
+                성 별 : 
+                </textarea>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
