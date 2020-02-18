@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
-    <title>Application Form</title>
+    <title>Application Form 2</title>
     <script>
         function appCheck(){
 			var theForm = document.appForm;
@@ -16,6 +17,37 @@
 				alert("성별을 선택해주세요")
 			}return;
         }
+
+        $(document).ready(function(){
+
+            $("#appName").keyup(function(){                 //#appName 공간에서 keyup이라는 이벤트가 발생했을 때
+                $("#outName").text($("#appName").val());    //#outName 공간에 #appName 내용이 출력된다
+            });
+
+            $("#appAge").keyup(function(){
+				$("#outAge").text($("#appAge").val());
+			});
+
+            $("#appTell1").click(function(){
+				$("#outTell1").text($("#appTell1").val());
+			});
+            $("#appTell2").keyup(function(){
+				$("#outTell2").text($("#appTell2").val());
+			});
+            $("#appTell3").keyup(function(){
+				$("#outTell3").text($("#appTell3").val());
+			});
+
+            $(".appGender").click(function(){
+                var gen = "";
+                $(".appGender").each(function(){
+                    if($(this).is(":checked"))
+                        gen += $(this).val() + " ";
+                });
+				$("#outGender").text(gen);
+			});
+
+        });
     </script>
     <style>
         table {
@@ -24,7 +56,7 @@
             border-collapse: collapse;
             margin-left: auto;
             margin-right: auto;
-            background-color: #e9f1fa;
+            background-color: papayawhip;
         }
         th, td {
             border: 1px solid #444444;
@@ -76,14 +108,14 @@
                 <p style="font-size: large; text-align: center;">성 별</p>
             </td>
             <td>
-                <input type="radio" id="appGender" value="Male">남자
-                <input type="radio" id="appGender" value="Female">여자
+                <input type="radio" class="appGender" name="gender" value="Male">남자
+                <input type="radio" class="appGender" name="gender" value="Female">여자
             </td>
         </tr>
     </table>
     <br>
-    <div id="confirmButton" style="text-align: center;">
-        <input type="button" value="확 인" onclick="appCheck()">
+    <div style="text-align: center;">
+        <input id="confirmButton" type="button" value="확 인" onclick="appCheck()">
         <input type="reset" value="초기화">
     </div>
     </form>
@@ -93,17 +125,23 @@
     <br>
     <table>
         <tr>
-            <td>
+            <td style="width: 25%; text-align: center;">
                 메시지
             </td>
-            <td>
-                <textarea style="width: 87%; height: 100px;">
-                정상입니다.
-                이 름 : 
-                나 이 : 
-                연락처 : 
-                성 별 : 
+            <td style="background-color: white;">
+                <!--
+                <textarea id="myTextArea" style="width: 87%; height: 100px; font-size: 1.3em;">
                 </textarea>
+                -->
+                정상입니다. <br><br>
+                이 름 : <span id="outName"></span><br>
+                나 이 : <span id="outAge"></span><br>
+                연락처 : 
+                    <span id="outTell1"></span> -
+                    <span id="outTell2"></span> -
+                    <span id="outTell3"></span><br>
+                성 별 : <span id="outGender"></span>
+               
             </td>
         </tr>
     </table>
